@@ -1,5 +1,5 @@
 ARG BASE_TAG
-FROM docker.io/postgres:${BASE_TAG}
+FROM docker.io/postgis/postgis:${BASE_TAG}
 ENTRYPOINT [ "/autoconf-entrypoint" ]
 CMD []
 ENV CERTS="{}" \
@@ -32,8 +32,8 @@ COPY autoconf-entrypoint /
 # Metadata
 ARG VCS_REF
 ARG BUILD_DATE
-LABEL org.label-schema.vendor=Tecnativa \
+LABEL org.label-schema.vendor=cormaza \
       org.label-schema.license=Apache-2.0 \
       org.label-schema.build-date="$BUILD_DATE" \
       org.label-schema.vcs-ref="$VCS_REF" \
-      org.label-schema.vcs-url="https://github.com/Tecnativa/docker-postgres-autoconf"
+      org.label-schema.vcs-url="https://github.com/cormaza/docker-postgres-autoconf"

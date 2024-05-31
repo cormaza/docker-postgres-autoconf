@@ -26,7 +26,7 @@ public_image = "%s/%s%s:%s" % (REGISTRY, REPO, SUFFIX, VERSION)
 docker["image", "tag", local_image, public_image] & FG
 docker["image", "push", public_image] & FG
 if VERSION == local.env.get("LATEST_RELEASE"):
-    latest_version = "alpine" if VERSION.endswith("-alpine") else "latest"
+    latest_version = "alpine" if VERSION.endswith("15-3.4-alpine") else "latest"
     public_image = "%s/%s%s:%s" % (REGISTRY, REPO, SUFFIX, latest_version)
     docker["image", "tag", local_image, public_image] & FG
     docker["image", "push", public_image] & FG
